@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Pokémon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/poke.css">
+    <link rel="stylesheet" href="css/error.css">
+    
+</head>
+<body style="background-color: #f0f0f0;">
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <div class="background-image-container mb-3">
+                            <!-- Contenedor de la imagen de fondo -->
+                        </div>
+    
+                        <div class="mensaje-error error-404" style="display: none;"></div>
+    
+                        <div class="input-group mb-3">
+                            <input type="text" id="txt_buscador" class="form-control" placeholder="Ingresa el nombre de un Pokémon">
+                            <button type="button" id="buscar" class="btn btn-primary">Buscar</button>
+                            <br>
+                           <button id="btnBuscarVoz" class="btn btn-secondary">Buscar por Voz</button>
+                        </div>
+    
+                        <div class="d-grid gap-2">
+                            <button type="button" id="limpiar" class="btn btn-secondary">Limpiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row justify-content-center mt-4">
+            <div class="col-lg-6">
+                <div class="card border-0 shadow" id="pokemon-card" style="display: none;">
+                    <div class="card-body">
+                        <div class="imagen mb-3"></div>
+                        <div class="mensaje-error error-404" style="display: none;"></div>
+                        <div class="contenedor-info">
+                            <p class="nombre"></p>
+                            <p class="tipo"></p>
+                            <p class="debilidades"></p>
+                        </div>
+                        <div class="contenedor-estadisticas"></div>
+                        <div id="botones-pokemon" style="display: none;">
+                            <button id="btnMegaX" class="btn btn-warning">Mega Evolución X</button>
+                            <button id="btnMegaY" class="btn btn-danger">Mega Evolución Y</button>
+                            <button id="btnEvoluciones" class="btn btn-success">Ver Evoluciones</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Ventana emergente personalizada -->
+    <div id="custom-popup" style="display: none;">
+        <div class="popup-content">
+            <h2 class="popup-title">¡Error Pokémon!</h2>
+            <p class="popup-message">No se encontró el Pokémon. ¡Intenta con otro nombre!</p>
+            <button id="close-popup" class="btn btn-primary">Cerrar</button>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/funciones.js"></script>
+    
+    </body>
+    </html>
